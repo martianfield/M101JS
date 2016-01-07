@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+<h1>Movies</h1>
+<ul>
+{% for movie in movies %}
+	<li>{{movie.title}}</li>
+{% else %}
+	<li>no movies found</li>
+{% endfor %}
+</ul>
+</body>
+</html>
