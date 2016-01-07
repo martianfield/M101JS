@@ -17,9 +17,12 @@
   },
   "homepage": "https://github.com/martianfield/M101JS#readme",
   "dependencies": {
+    "consolidate": "^0.13.1",
     "express": "^4.13.3",
+    "kerberos": "0.0.17",
     "mocha": "^2.3.4",
-    "mongodb": "^2.1.3"
+    "mongodb": "^2.1.3",
+    "nunjucks": "^2.3.0"
   },
   "devDependencies": {
     "nodemon": "^1.8.1"
