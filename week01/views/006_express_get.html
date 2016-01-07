@@ -1,0 +1,11 @@
+<!DOCTYPE>
+<html>
+<head></head>
+<body>
+	<h1>{{thingy}}</h1>
+	<ul>
+	{% for q in queries%}
+		<li>{{ q.name + ':' + q.value }}</li>
+	{% endfor %}
+	</ul>
+</body>
