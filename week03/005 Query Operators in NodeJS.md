@@ -15,16 +15,27 @@ MongoClient.connect(uri, (err,db) => {
 })
 ```
 
-To project the results, simply use the second paramater of `find()` (as discussed earlier). E.g.:
+To project the results, we simply chain `project()` to the `find()` method: E.g.:
 
 ```javascript
     ...
     let projection = { "_id":0, "title": 1 }
-    let cursor = db.collection('movie').find(query, projection)
+    let cursor = db.collection('movie').find(query).project(projection)
     ...
 ```
 
-Note:
+Note that `project()` is a `Cursor` method (`find()` returns a cursor). Other `Cursor` methods yoou can chain are:
 
-MongoJS and the mongo shell stringify object ids differently ... that's all the difference there is. Both really ARE ObjectIds
+- `filter(<query document>)` - I guess you use an empty `find()`
+- `skip(<n>)`
+- `limit(<n>`
+- `max(<n>)`
+- `min(<n>)`
+- `sort(<array>)` - to set the sort order
+- and others, see: [http://mongodb.github.io/node-mongodb-native/2.1/api/Cursor.html](http://mongodb.github.io/node-mongodb-native/2.1/api/Cursor.html)
+
+Note: `findOne()` did take an options object as the second argument (to specify projection, skips, limit, etc). This method, however, is deprecated.
+
+
+Note:MongoJS and the mongo shell stringify object ids differently ... that's all the difference there is. Both really ARE ObjectIds
 
