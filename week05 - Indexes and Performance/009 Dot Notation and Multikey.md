@@ -53,7 +53,7 @@ The following query would NOT return the correct result, it would simply return 
 db.students.find({'scores.score':{'$gt':99}, 'scores.type':'exam'})
 ```
 
-The correct query uses the `$elemMatch` operator. This operator checks if one element (i.e. document) matches all the filters:
+The correct query uses the `$elemMatch` operator on the `scores` key ... make sure you grock this: we `$elemMatch` on the `scores` key of the students collection. This operator checks if one element (i.e. document) matches all the filters:
 
 ```
 db.students.find(
@@ -67,4 +67,9 @@ db.students.find(
 )
 ```
 
+Watch out: make sure you do NOT use the dot-operator in the `$elemMatch` ... we are already targetting the `scores` field of the students collection ... so there is no need to address that namespace again!
+
+Running this query with the `explain()` chained in will show that Mongo first uses the `scores.score` index and then uses the result of that to further filter on the score `type`.
+
+I.e. Mongo uses the indexes it has and then uses that result further (i.e. inspects EVERY document that fulfills the indexable filter).
 
