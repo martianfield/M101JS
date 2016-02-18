@@ -1,5 +1,7 @@
 # 001 Introduction to the Aggregation Framework
 
+* [YouTube](https://www.youtube.com/watch?v=O35V9ZR7TEs)
+
 Allows to run various types of reports or analysis on documents in one or more mongo collections.
 
 The AF is based on the concept of a pipeline.

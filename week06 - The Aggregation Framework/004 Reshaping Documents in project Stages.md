@@ -1,5 +1,7 @@
 # 004 Reshaping Documents in project Stages
 
+* [YouTube](https://www.youtube.com/watch?v=csy5ERC3ifw)
+
 ## Promoting Embedded Document Fields
 
 You can 'promote' nested fields during a project stage.

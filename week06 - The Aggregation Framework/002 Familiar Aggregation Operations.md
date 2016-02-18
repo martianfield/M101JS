@@ -1,4 +1,6 @@
-002 Familiar Aggregation Operations
+# 002 Familiar Aggregation Operations
+
+* [YouTube](https://www.youtube.com/watch?v=Kxegt-5iT-Q)
 
 Here a list of aggregation operations we are already familiar with from querying:
 
