@@ -1,4 +1,6 @@
-001 Introduction
+# 001 Introduction
+
+* [YouTube](https://www.youtube.com/watch?v=GGMfM3pYK_4)
 
 Performance is impacted software-side by
 

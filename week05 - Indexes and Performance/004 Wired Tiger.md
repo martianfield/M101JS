@@ -1,5 +1,7 @@
 # 004 Wired Tiger
 
+* [YouTube](https://www.youtube.com/watch?v=aNsugW7r3mM)
+
 More performant than mmap. Since 3.2 the default engine.
 
 Offers document level concurrency (lock-free) vs. colleciton-level concurrency (in mmap)
