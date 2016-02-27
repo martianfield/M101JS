@@ -3,7 +3,9 @@
 ## Video
 
 * link: [YouTube](https://www.youtube.com/watch?v=nLau5Fx9LC8)
-* notes: At 0:36, Andrew says that when you search on strings with a standard index, the entire string must match. This isn't entirely true; a regex search will search the index (rather than the full collection), and if you anchor it on the left by beginning with ^, you can often do better still. Here's a link to the documentation.
+* notes: 
+    * At 0:36, Andrew says that when you search on strings with a standard index, the entire string must match. This isn't entirely true; a regex search will search the index (rather than the full collection), and if you anchor it on the left by beginning with ^, you can often do better still. Here's a link to the documentation.
+    * in this video `ensureIndex` is used ... since 3.0 this is deprecated and is an alias for `createIndex` (see [here](https://docs.mongodb.org/manual/reference/method/db.collection.ensureIndex/))
 
 
 ## Why and What?
@@ -50,7 +52,7 @@ To solve the issue we need to
 We can solve the issue by creating a full text index. We do this by creating a an index of type `text` on a field (in our case the field `words`):
 
 ```
-db.sentences.ensureIndex({'words':'text'})
+db.sentences.createIndex({'words':'text'})
 ```
 
 ### Searching an Index
@@ -75,7 +77,7 @@ will return all documents that have either `jumping`, or `cat`, or both in their
 
 Additionally, things like punctuation (dots, commas, etc.) and certain stop words (like `and`, `a`) are ignored.
 
-### Ordered Match
+## Ordered Match
 
 When doing a full text index search, Mongo rates found result by 'quality' of match (i.e. how good Mongo 'thinks' the document matches the search result).
 
@@ -85,6 +87,10 @@ db.sentences
     .sort({score:{$meta:'textScore'}})
 ```
 
+
+## Addendum: Create Index of Multiple Fields
+
+https://docs.mongodb.org/manual/tutorial/create-text-index-on-multiple-fields/
 
 
 
